@@ -1582,7 +1582,7 @@ pre .javascript .function {
   display: block;
   margin: 0 auto;
   max-width: 300px;
-  height: 300;
+  height: auto;
   border: 2px solid #333;
   padding: 2px;
 }
@@ -1662,7 +1662,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #0f1842;
+  background: #6294d5;
 }
 .links-of-blogroll {
   font-size: 13px;
