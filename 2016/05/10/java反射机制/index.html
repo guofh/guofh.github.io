@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="java,反射机制," />
 
 
 
@@ -80,15 +80,19 @@
 
 
 
-<meta name="description" content="男，90年，吉林市人，现定居杭州。heiguo88@126.com">
-<meta property="og:type" content="website">
-<meta property="og:title" content="一口大黑郭">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta name="description" content="什么是java反射机制java反射机制是在运行状态中，对于任意一个类（class文件），都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
+定义听上去比较绕口，实际还是比较好理解的。一般就是用配置文件+实现接口来实现。应用程序读取配置文件，配置文件存着类名，之后应用程序根据类名找到对应的c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="java反射机制">
+<meta property="og:url" content="http://yoursite.com/2016/05/10/java反射机制/index.html">
 <meta property="og:site_name" content="一口大黑郭">
-<meta property="og:description" content="男，90年，吉林市人，现定居杭州。heiguo88@126.com">
+<meta property="og:description" content="什么是java反射机制java反射机制是在运行状态中，对于任意一个类（class文件），都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
+定义听上去比较绕口，实际还是比较好理解的。一般就是用配置文件+实现接口来实现。应用程序读取配置文件，配置文件存着类名，之后应用程序根据类名找到对应的c">
+<meta property="og:updated_time" content="2016-05-10T11:59:23.542Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一口大黑郭">
-<meta name="twitter:description" content="男，90年，吉林市人，现定居杭州。heiguo88@126.com">
+<meta name="twitter:title" content="java反射机制">
+<meta name="twitter:description" content="什么是java反射机制java反射机制是在运行状态中，对于任意一个类（class文件），都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。
+定义听上去比较绕口，实际还是比较好理解的。一般就是用配置文件+实现接口来实现。应用程序读取配置文件，配置文件存着类名，之后应用程序根据类名找到对应的c">
 
 
 
@@ -106,7 +110,7 @@
   };
 </script>
 
-  <title> 一口大黑郭 </title>
+  <title> java反射机制 | 一口大黑郭 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -127,9 +131,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -216,9 +218,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -238,10 +240,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/05/10/java反射机制/" itemprop="url">
-                  java反射机制
-                </a>
+                java反射机制
               
             
           </h1>
@@ -307,290 +306,102 @@
       
 
       
-        
-          <h1 id="什么是java反射机制"><a href="#什么是java反射机制" class="headerlink" title="什么是java反射机制"></a>什么是java反射机制</h1><p>java反射机制是在运行状态中，对于任意一个类（class文件），都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。</p>
+        <h1 id="什么是java反射机制"><a href="#什么是java反射机制" class="headerlink" title="什么是java反射机制"></a>什么是java反射机制</h1><p>java反射机制是在运行状态中，对于任意一个类（class文件），都能够知道这个类的所有属性和方法；对于任意一个对象，都能够调用它的任意一个方法和属性；这种动态获取的信息以及动态调用对象的方法的功能称为java语言的反射机制。</p>
 <p>定义听上去比较绕口，实际还是比较好理解的。一般就是用配置文件+实现接口来实现。应用程序读取配置文件，配置文件存着类名，之后应用程序根据类名找到对应的class。</p>
-<p>比如tomcat加载servlet的过程,tomcat提供servlet接口，然后我们写的servlet类实现servlet接口，之后将servlet名配置到web.xml文件中，当tomcat启动时会加载web.xml中配置的servlet类。这个过程就是一个反射过程。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/10/java反射机制/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
+<p>比如tomcat加载servlet的过程,tomcat提供servlet接口，然后我们写的servlet类实现servlet接口，之后将servlet名配置到web.xml文件中，当tomcat启动时会加载web.xml中配置的servlet类。这个过程就是一个反射过程。<br><a id="more"></a></p>
+<h1 id="反射过程实现"><a href="#反射过程实现" class="headerlink" title="反射过程实现"></a>反射过程实现</h1><p>首先应用程序通过外部配置文件中找到class文件，通过class类，拿到这个类的类型信息，利用反射拿到这个类的方法属性。</p>
+<p>拿到Class对象</p>
+<pre><code>Class cls = Class.forName(&quot;Hello&quot;);//拿到Hello类
+Object o = cls.newInstance();//创建实例
+</code></pre><p>得到构造器：</p>
+<pre><code>Class cls = Class.forName(&quot;Hello&quot;);
+Constructor cons = cls.getConstructor(String.class,int.class);//带参数构造函数
+object obj = cons.newInstance(&quot;hello&quot;,10);
+</code></pre><p>得到成员变量：</p>
+<pre><code>Class cls = Class.forName(&quot;Hello&quot;);
+Field field = cls.getDeclaredField(&quot;name&quot;);//只能获取本类，但包含私有的。
+field.setAccessible(true); //对私有字段的访问取消权限检查。     
+</code></pre><p>得到类方法：</p>
+<pre><code>Class cls = Class.forName(&quot;Hello&quot;);
+Method m = cls.getMethod(&quot;getName&quot;, null);
+Object name = m.invoke(obj, null);
+</code></pre><h1 id="更多"><a href="#更多" class="headerlink" title="更多"></a>更多</h1><p>上面只是几个简单的用法，更多用法还参考API文档。主要是理解原理，原理懂了，需要使用时直接查文档就ok了。</p>
+
+      
+    </div>
+
+    <div>
+      
         
       
     </div>
 
     <div>
       
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>请他喝杯咖啡</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/weixin.jpg" alt="郭峰浩 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/zhifubao.jpg" alt="郭峰浩 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
     </div>
+  </div>
 
-    <div>
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/10/git使用/" itemprop="url">
-                  git使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-10T09:05:32+08:00" content="2016-05-10">
-              2016-05-10
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工具使用/" itemprop="url" rel="index">
-                    <span itemprop="name">工具使用</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
+            <a href="/tags/java/" rel="tag">#java</a>
           
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/10/git使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/10/git使用/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/反射机制/" rel="tag">#反射机制</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="为什么使用Git"><a href="#为什么使用Git" class="headerlink" title="为什么使用Git"></a>为什么使用Git</h1><p>自由，没有什么比自由更能让人向往。想象着在一个海岛，或是一片竹林里，没有网络，离开了嘈杂与吵闹。一杯龙井茶，在大自然的陪伴下，完成自己的项目。代码修改，提交，分支管理…这一切，只需要Git，就足够了。</p>
-<h1 id="分布式管理工具"><a href="#分布式管理工具" class="headerlink" title="分布式管理工具"></a>分布式管理工具</h1><p>传统的集中式管理工具如SVN，clearcase需要一个中央版本库，所有人干活都需要连接网络然后从服务器下载代码，修改后再去提交到中央服务器。而分布式管理工具是每个人都有一个完整的版本库，自己在自己的版本库中修改提交，而这一切是不需要网络的。虽然大部分时候使用Git也需要一个服务器，但这个服务器的概念不同于集中式版本管理工具的服务器概念，它只是大家为了提交合并代码方便用的，即使没有这个服务器，大家也可以互相提交代码给对方，只不过会相对麻烦一点。所以大家约定俗成找一台机器做服务器，可以把它想象成是一个什么都不做的队友，他只是被动接收大家的代码。</p>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/10/git使用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/10/git使用/" rel="next" title="git使用">
+                <i class="fa fa-chevron-left"></i> git使用
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/09/Markdown使用/" itemprop="url">
-                  Markdown使用
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-09T20:42:54+08:00" content="2016-05-09">
-              2016-05-09
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工具使用/" itemprop="url" rel="index">
-                    <span itemprop="name">工具使用</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/05/09/Markdown使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/09/Markdown使用/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <h1 id="使用Markdown"><a href="#使用Markdown" class="headerlink" title="使用Markdown"></a>使用Markdown</h1><p>使用Markdown的好处就不多说了，简洁，高效，便捷等。最近准备重新搭建个人博客，年纪大了，记忆力不如从前，好多东西还是要总结记录下来，方便以后翻阅查看。之前的博客是租的服务器，用wordpress搭建的。wp挺好用的，搭建比较简单，主题也多。但随着年龄增大，对一些复杂功能的要求越来越低，反而是简洁的东西更吸引人，且更能专注于写作。加上平时习惯了vim+HHKB的键盘流操作风格和github的使用，自然就选择了markdown+github的方案了。</p>
-<hr>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/05/09/Markdown使用/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
-  </section>
 
-  
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -598,6 +409,14 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/05/10/java反射机制/"
+           data-title="java反射机制" data-url="http://yoursite.com/2016/05/10/java反射机制/">
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -617,8 +436,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/touxiang1.jpg"
@@ -706,6 +534,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是java反射机制"><span class="nav-number">1.</span> <span class="nav-text">什么是java反射机制</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#反射过程实现"><span class="nav-number">2.</span> <span class="nav-text">反射过程实现</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#更多"><span class="nav-number">3.</span> <span class="nav-text">更多</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -809,6 +648,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
