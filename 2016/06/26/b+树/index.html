@@ -111,7 +111,7 @@ B+树的结构定义如下：
 <meta property="og:image" content="http://yoursite.com/img/bptree/bptree3.jpeg">
 <meta property="og:image" content="http://yoursite.com/img/bptree/bptree4.jpeg">
 <meta property="og:image" content="http://yoursite.com/img/bptree/bptree5.jpeg">
-<meta property="og:updated_time" content="2016-06-26T10:03:15.000Z">
+<meta property="og:updated_time" content="2016-06-26T12:39:01.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="b+树">
 <meta name="twitter:description" content="B+树是B树的一种变形，在叶结点上存储信息。
@@ -351,7 +351,7 @@ B+树的结构定义如下：
 </ol>
 <p>和B树相似，B＋树阶的大小是根据外存磁盘叶块大小及关键码域和相应的指针域所占用的空间大小计算得来，考虑到可维护性和空间效率，所以规定每个结点至少有［m/2］个子结点，保证在全满和半满之间。</p>
 <a id="more"></a>
-<h4 id="B-树的查找"><a href="#B-树的查找" class="headerlink" title="B+树的查找"></a>B+树的查找</h4><p>在上层已找到待查的关键码，并不停止，而是继续沿指针向下一直查到叶结点层的这个关键码。如图可以看出，B＋树被广泛应用的外存索引的好处是，可以有效减少io次树，io次树和树高有关，而B＋树可以很好的控制树的高度，从而达到最快的外存读写。</p>
+<h4 id="B-树的查找"><a href="#B-树的查找" class="headerlink" title="B+树的查找"></a>B+树的查找</h4><p>在上层已找到待查的关键码，并不停止，而是继续沿指针向下一直查到叶结点层的这个关键码。如图可以看出，B＋树被广泛应用的外存索引的好处是，可以有效减少io次数，io次数和树高有关，而B＋树可以很好的控制树的高度，从而达到最快的外存读写。</p>
 <p><img src="/img/bptree/bptree1.jpeg" alt="img"></p>
 <h4 id="B-树的插入"><a href="#B-树的插入" class="headerlink" title="B+树的插入"></a>B+树的插入</h4><p>插入过程与B树类似。注意保证上一层结点中有这两个结点的最大关键码（或最小关键码）。</p>
 <p>插入位置如果没有益处，则找到相应的叶结点插入。如果有益处，则将进行分裂过程，该结点分裂成两个结点，而且在父层添加复写关键码，和指向新结点的指针。</p>
