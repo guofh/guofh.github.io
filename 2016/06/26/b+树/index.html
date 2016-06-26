@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="markdown," />
+  <meta name="keywords" content="b+树,算法," />
 
 
 
@@ -80,16 +80,52 @@
 
 
 
-<meta name="description" content="使用Markdown使用Markdown的好处就不多说了，简洁，高效，便捷等。最近准备重新搭建个人博客，年纪大了，记忆力不如从前，好多东西还是要总结记录下来，方便以后翻阅查看。之前的博客是租的服务器，用wordpress搭建的。wp挺好用的，搭建比较简单，主题也多。但随着年龄增大，对一些复杂功能的要求越来越低，反而是简洁的东西更吸引人，且更能专注于写作。加上平时习惯了vim+HHKB的键盘流操作风">
+<meta name="description" content="B+树是B树的一种变形，在叶结点上存储信息。
+所有的关键码均出现在叶结点。
+各层节结中的关键码均是下一层相应节结中最大关键码（或最小关键码）的复写。
+
+B+树的结构定义如下：
+每个结点最多有m个子结点
+每个结点（除根结点）至少有［m/2］个子结点
+根结点至少有两个子结点
+有k个子结点的结点必有k个关键码
+
+和B树相似，B＋树阶的大小是根据外存磁盘叶块大小及关键码域和相应的指针域所占用的空间大小计算">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown使用">
-<meta property="og:url" content="http://yoursite.com/2016/05/09/Markdown使用/index.html">
+<meta property="og:title" content="b+树">
+<meta property="og:url" content="http://yoursite.com/2016/06/26/b+树/index.html">
 <meta property="og:site_name" content="一口大黑郭">
-<meta property="og:description" content="使用Markdown使用Markdown的好处就不多说了，简洁，高效，便捷等。最近准备重新搭建个人博客，年纪大了，记忆力不如从前，好多东西还是要总结记录下来，方便以后翻阅查看。之前的博客是租的服务器，用wordpress搭建的。wp挺好用的，搭建比较简单，主题也多。但随着年龄增大，对一些复杂功能的要求越来越低，反而是简洁的东西更吸引人，且更能专注于写作。加上平时习惯了vim+HHKB的键盘流操作风">
-<meta property="og:updated_time" content="2016-05-09T14:35:11.000Z">
+<meta property="og:description" content="B+树是B树的一种变形，在叶结点上存储信息。
+所有的关键码均出现在叶结点。
+各层节结中的关键码均是下一层相应节结中最大关键码（或最小关键码）的复写。
+
+B+树的结构定义如下：
+每个结点最多有m个子结点
+每个结点（除根结点）至少有［m/2］个子结点
+根结点至少有两个子结点
+有k个子结点的结点必有k个关键码
+
+和B树相似，B＋树阶的大小是根据外存磁盘叶块大小及关键码域和相应的指针域所占用的空间大小计算">
+<meta property="og:image" content="http://yoursite.com/source/bptree1.jpeg">
+<meta property="og:image" content="http://yoursite.com/source/bptree2.jpeg">
+<meta property="og:image" content="http://yoursite.com/source/bptree3.jpeg">
+<meta property="og:image" content="http://yoursite.com/source/bptree4.jpeg">
+<meta property="og:image" content="http://yoursite.com/source/bptree5.jpeg">
+<meta property="og:updated_time" content="2016-06-26T09:47:17.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markdown使用">
-<meta name="twitter:description" content="使用Markdown使用Markdown的好处就不多说了，简洁，高效，便捷等。最近准备重新搭建个人博客，年纪大了，记忆力不如从前，好多东西还是要总结记录下来，方便以后翻阅查看。之前的博客是租的服务器，用wordpress搭建的。wp挺好用的，搭建比较简单，主题也多。但随着年龄增大，对一些复杂功能的要求越来越低，反而是简洁的东西更吸引人，且更能专注于写作。加上平时习惯了vim+HHKB的键盘流操作风">
+<meta name="twitter:title" content="b+树">
+<meta name="twitter:description" content="B+树是B树的一种变形，在叶结点上存储信息。
+所有的关键码均出现在叶结点。
+各层节结中的关键码均是下一层相应节结中最大关键码（或最小关键码）的复写。
+
+B+树的结构定义如下：
+每个结点最多有m个子结点
+每个结点（除根结点）至少有［m/2］个子结点
+根结点至少有两个子结点
+有k个子结点的结点必有k个关键码
+
+和B树相似，B＋树阶的大小是根据外存磁盘叶块大小及关键码域和相应的指针域所占用的空间大小计算">
+<meta name="twitter:image" content="http://yoursite.com/source/bptree1.jpeg">
 
 
 
@@ -107,7 +143,7 @@
   };
 </script>
 
-  <title> Markdown使用 | 一口大黑郭 </title>
+  <title> b+树 | 一口大黑郭 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -237,7 +273,7 @@
             
             
               
-                Markdown使用
+                b+树
               
             
           </h1>
@@ -249,8 +285,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-09T20:42:54+08:00" content="2016-05-09">
-              2016-05-09
+            <time itemprop="dateCreated" datetime="2016-06-26T09:05:32+08:00" content="2016-06-26">
+              2016-06-26
             </time>
           </span>
 
@@ -263,8 +299,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工具使用/" itemprop="url" rel="index">
-                    <span itemprop="name">工具使用</span>
+                  <a href="/categories/算法/" itemprop="url" rel="index">
+                    <span itemprop="name">算法</span>
                   </a>
                 </span>
 
@@ -279,8 +315,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/09/Markdown使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/09/Markdown使用/" itemprop="commentsCount"></span>
+                <a href="/2016/06/26/b+树/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/26/b+树/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -303,66 +339,25 @@
       
 
       
-        <h1 id="使用Markdown"><a href="#使用Markdown" class="headerlink" title="使用Markdown"></a>使用Markdown</h1><p>使用Markdown的好处就不多说了，简洁，高效，便捷等。最近准备重新搭建个人博客，年纪大了，记忆力不如从前，好多东西还是要总结记录下来，方便以后翻阅查看。之前的博客是租的服务器，用wordpress搭建的。wp挺好用的，搭建比较简单，主题也多。但随着年龄增大，对一些复杂功能的要求越来越低，反而是简洁的东西更吸引人，且更能专注于写作。加上平时习惯了vim+HHKB的键盘流操作风格和github的使用，自然就选择了markdown+github的方案了。</p>
-<hr>
+        <h4 id="B-树是B树的一种变形，在叶结点上存储信息。"><a href="#B-树是B树的一种变形，在叶结点上存储信息。" class="headerlink" title="B+树是B树的一种变形，在叶结点上存储信息。"></a>B+树是B树的一种变形，在叶结点上存储信息。</h4><ol>
+<li>所有的关键码均出现在叶结点。</li>
+<li>各层节结中的关键码均是下一层相应节结中最大关键码（或最小关键码）的复写。</li>
+</ol>
+<h4 id="B-树的结构定义如下："><a href="#B-树的结构定义如下：" class="headerlink" title="B+树的结构定义如下："></a>B+树的结构定义如下：</h4><ol>
+<li>每个结点最多有m个子结点</li>
+<li>每个结点（除根结点）至少有［m/2］个子结点</li>
+<li>根结点至少有两个子结点</li>
+<li>有k个子结点的结点必有k个关键码</li>
+</ol>
+<p>和B树相似，B＋树阶的大小是根据外存磁盘叶块大小及关键码域和相应的指针域所占用的空间大小计算得来，考虑到可维护性和空间效率，所以规定每个结点至少有［m/2］个子结点，保证在全满和半满之间。</p>
 <a id="more"></a>
-<h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><p>Markdown语法很简单，记住下面这10个基本就够用了。更多语法可以参考<a href="http://www.markdown.cn" target="_blank" rel="external">Markdown.cn</a></p>
-<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h2><p>在每行的开头加上一定数量的#号代表响应级别的标题（#号数量最多为6个），比如：  </p>
-<pre><code>#一级标题 ;##二级标题 ;###三级标题 ;......######六级标题;  
-</code></pre><p>另一种写法是利用 = （一级标题）和 - （二级标题），例如：  </p>
-<pre><code>这是第一级标题  
-=============  
-这是第二级标题  
-------------
-</code></pre><h2 id="2-引用"><a href="#2-引用" class="headerlink" title="2. 引用"></a>2. 引用</h2><p>在每行的最前面加上&gt;符号，区块引用可以嵌套，如引用的引用，只需根据需求加上不同数量的&gt;符号。  </p>
-<pre><code>&gt;第一级引用
-&gt;&gt;第二级引用
-&gt;&gt;&gt;第三级引用
-</code></pre><h2 id="3-列表"><a href="#3-列表" class="headerlink" title="3. 列表"></a>3. 列表</h2><p>列表分有序列表和无序列表。  </p>
-<p>有序列表使用数字接着一个英文句点：  </p>
-<pre><code>1.  Bird
-2.  McHale
-3.  Parish
-</code></pre><p>无序列表使用星号、加号或是减号作为列表标记：  </p>
-<pre><code>*   Red
-*   Green
-*   Blue
-</code></pre><h2 id="4-代码区块"><a href="#4-代码区块" class="headerlink" title="4. 代码区块"></a>4. 代码区块</h2><p>在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：  </p>
-<pre><code>这是一个普通段落：
-
-    这是一个代码区块。  
-</code></pre><h2 id="5-分割线"><a href="#5-分割线" class="headerlink" title="5. 分割线"></a>5. 分割线</h2><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：  </p>
-<pre><code>* * *
-
-***
-
-*****
-
-- - -
-
----------------------------------------   
-</code></pre><h2 id="6-链接"><a href="#6-链接" class="headerlink" title="6. 链接"></a>6. 链接</h2><p>Markdown 支持两种形式的链接语法： 行内式和参考式两种形式。这里只说下行内式链接。要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：  </p>
-<pre><code>This is [an example](http://example.com/ &quot;Title&quot;) inline link.
-
-[This link](http://example.net/) has no title attribute.
-</code></pre><h2 id="7-强调"><a href="#7-强调" class="headerlink" title="7. 强调"></a>7. 强调</h2><p>使用*<em> 和*<em>*</em> 对使用的字词强调，\</em>字词<em> 代表斜体，\</em>*字词** 代表粗体如：  </p>
-<pre><code>*斜体*
-**加粗**
-</code></pre><h2 id="8-行内代码块"><a href="#8-行内代码块" class="headerlink" title="8. 行内代码块"></a>8. 行内代码块</h2><p>使用反引号包含区域代表该区域为代码块，如：  </p>
-<pre><code>这是`代码块`  
-</code></pre><h2 id="9-插入图片"><a href="#9-插入图片" class="headerlink" title="9. 插入图片"></a>9. 插入图片</h2><p>Markdown 使用一种和链接很相似的语法来标记图片，插入方式如下：  </p>
-<pre><code>![Alt text](/path/to/img.jpg)
-
-![Alt text](/path/to/img.jpg &quot;Optional title&quot;)  
-</code></pre><ul>
-<li>一个惊叹号 !  </li>
-<li>接着一个方括号，里面放上图片的替代文字  </li>
-<li>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上 选择性的 ‘title’ 文字。</li>
-</ul>
-<h2 id="10-反斜杠"><a href="#10-反斜杠" class="headerlink" title="10. 反斜杠"></a>10. 反斜杠</h2><p>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 <em\> 标签），你可以在星号的前面加上反斜杠：  </em\></p>
-<pre><code>\*literal asterisks\*
-</code></pre><hr>
-<h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><p>就这么几个简单的语法，满足了写作时候大部分需求，轻便又简单。抛弃office繁琐的操作，更好的专注于记录与写作吧。</p>
+<h4 id="B-树的查找"><a href="#B-树的查找" class="headerlink" title="B+树的查找"></a>B+树的查找</h4><p>在上层已找到待查的关键码，并不停止，而是继续沿指针向下一直查到叶结点层的这个关键码。如图可以看出，B＋树被广泛应用的外存索引的好处是，可以有效减少io次树，io次树和树高有关，而B＋树可以很好的控制树的高度，从而达到最快的外存读写。</p>
+<p><img src="/source/bptree1.jpeg" alt="img"></p>
+<h4 id="B-树的插入"><a href="#B-树的插入" class="headerlink" title="B+树的插入"></a>B+树的插入</h4><p>插入过程与B树类似。注意保证上一层结点中有这两个结点的最大关键码（或最小关键码）。</p>
+<p>插入位置如果没有益处，则找到相应的叶结点插入。如果有益处，则将进行分裂过程，该结点分裂成两个结点，而且在父层添加复写关键码，和指向新结点的指针。</p>
+<p><img src="/source/bptree2.jpeg" alt="img"><br><img src="/source/bptree3.jpeg" alt="img"></p>
+<h4 id="B-树的删除"><a href="#B-树的删除" class="headerlink" title="B+树的删除"></a>B+树的删除</h4><p>当关键码下益处时，与左或右兄弟进行调整（甚至合并）<br>关键码在叶结点层删除后，其在上层的复本可以保留，作为一个‘分界关键码’存在。也可以替换为新的最大关键码（或最小关键码）</p>
+<p><img src="/source/bptree4.jpeg" alt="img"><br><img src="/source/bptree5.jpeg" alt="img"></p>
 
       
     </div>
@@ -405,7 +400,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/markdown/" rel="tag">#markdown</a>
+            <a href="/tags/b-树/" rel="tag">#b+树</a>
+          
+            <a href="/tags/算法/" rel="tag">#算法</a>
           
         </div>
       
@@ -414,13 +411,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/05/10/java反射机制/" rel="next" title="java反射机制">
+                <i class="fa fa-chevron-left"></i> java反射机制
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/10/git使用/" rel="prev" title="git使用">
-                git使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -446,8 +443,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/09/Markdown使用/"
-           data-title="Markdown使用" data-url="http://yoursite.com/2016/05/09/Markdown使用/">
+      <div class="ds-thread" data-thread-key="2016/06/26/b+树/"
+           data-title="b+树" data-url="http://yoursite.com/2016/06/26/b+树/">
       </div>
     
   </div>
@@ -576,7 +573,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Markdown"><span class="nav-number">1.</span> <span class="nav-text">使用Markdown</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Markdown语法"><span class="nav-number">2.</span> <span class="nav-text">Markdown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-标题"><span class="nav-number">2.1.</span> <span class="nav-text">1. 标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-引用"><span class="nav-number">2.2.</span> <span class="nav-text">2. 引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-列表"><span class="nav-number">2.3.</span> <span class="nav-text">3. 列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-代码区块"><span class="nav-number">2.4.</span> <span class="nav-text">4. 代码区块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-分割线"><span class="nav-number">2.5.</span> <span class="nav-text">5. 分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-链接"><span class="nav-number">2.6.</span> <span class="nav-text">6. 链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-强调"><span class="nav-number">2.7.</span> <span class="nav-text">7. 强调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-行内代码块"><span class="nav-number">2.8.</span> <span class="nav-text">8. 行内代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-插入图片"><span class="nav-number">2.9.</span> <span class="nav-text">9. 插入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-反斜杠"><span class="nav-number">2.10.</span> <span class="nav-text">10. 反斜杠</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结束"><span class="nav-number">3.</span> <span class="nav-text">结束</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#B-树是B树的一种变形，在叶结点上存储信息。"><span class="nav-number">1.</span> <span class="nav-text">B+树是B树的一种变形，在叶结点上存储信息。</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-树的结构定义如下："><span class="nav-number">2.</span> <span class="nav-text">B+树的结构定义如下：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-树的查找"><span class="nav-number">3.</span> <span class="nav-text">B+树的查找</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-树的插入"><span class="nav-number">4.</span> <span class="nav-text">B+树的插入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#B-树的删除"><span class="nav-number">5.</span> <span class="nav-text">B+树的删除</span></a></li></ol></div>
             
           </div>
         </section>
