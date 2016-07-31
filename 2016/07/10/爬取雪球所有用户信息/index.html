@@ -64,7 +64,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="markdown," />
+  <meta name="keywords" content="python,爬虫," />
 
 
 
@@ -80,16 +80,19 @@
 
 
 
-<meta name="description" content="使用Markdown使用Markdown的好处就不多说了，简洁，高效，便捷等。最近准备重新搭建个人博客，年纪大了，记忆力不如从前，好多东西还是要总结记录下来，方便以后翻阅查看。之前的博客是租的服务器，用wordpress搭建的。wp挺好用的，搭建比较简单，主题也多。但随着年龄增大，对一些复杂功能的要求越来越低，反而是简洁的东西更吸引人，且更能专注于写作。加上平时习惯了vim+HHKB的键盘流操作风">
+<meta name="description" content="需求分析最近想要获取一些雪球的数据，所以写了个小爬虫来抓取。写爬虫时也看了些框架，比如scrapy。觉得目前还用不上太多功能，本着快速开发原则，直接使用python requests库抓取。代码一共一百多行，抓取了十万多用户数据，足够使用分析了。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Markdown使用">
-<meta property="og:url" content="http://yoursite.com/2016/05/09/Markdown使用/index.html">
+<meta property="og:title" content="爬取雪球所有用户信息">
+<meta property="og:url" content="http://yoursite.com/2016/07/10/爬取雪球所有用户信息/index.html">
 <meta property="og:site_name" content="一口大黑郭">
-<meta property="og:description" content="使用Markdown使用Markdown的好处就不多说了，简洁，高效，便捷等。最近准备重新搭建个人博客，年纪大了，记忆力不如从前，好多东西还是要总结记录下来，方便以后翻阅查看。之前的博客是租的服务器，用wordpress搭建的。wp挺好用的，搭建比较简单，主题也多。但随着年龄增大，对一些复杂功能的要求越来越低，反而是简洁的东西更吸引人，且更能专注于写作。加上平时习惯了vim+HHKB的键盘流操作风">
-<meta property="og:updated_time" content="2016-05-09T14:35:11.000Z">
+<meta property="og:description" content="需求分析最近想要获取一些雪球的数据，所以写了个小爬虫来抓取。写爬虫时也看了些框架，比如scrapy。觉得目前还用不上太多功能，本着快速开发原则，直接使用python requests库抓取。代码一共一百多行，抓取了十万多用户数据，足够使用分析了。">
+<meta property="og:image" content="https://github.com/guofh/XueqiuSpider/blob/master/followers.png">
+<meta property="og:image" content="https://github.com/guofh/XueqiuSpider/blob/master/dicuss.png">
+<meta property="og:updated_time" content="2016-07-31T05:28:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Markdown使用">
-<meta name="twitter:description" content="使用Markdown使用Markdown的好处就不多说了，简洁，高效，便捷等。最近准备重新搭建个人博客，年纪大了，记忆力不如从前，好多东西还是要总结记录下来，方便以后翻阅查看。之前的博客是租的服务器，用wordpress搭建的。wp挺好用的，搭建比较简单，主题也多。但随着年龄增大，对一些复杂功能的要求越来越低，反而是简洁的东西更吸引人，且更能专注于写作。加上平时习惯了vim+HHKB的键盘流操作风">
+<meta name="twitter:title" content="爬取雪球所有用户信息">
+<meta name="twitter:description" content="需求分析最近想要获取一些雪球的数据，所以写了个小爬虫来抓取。写爬虫时也看了些框架，比如scrapy。觉得目前还用不上太多功能，本着快速开发原则，直接使用python requests库抓取。代码一共一百多行，抓取了十万多用户数据，足够使用分析了。">
+<meta name="twitter:image" content="https://github.com/guofh/XueqiuSpider/blob/master/followers.png">
 
 
 
@@ -107,7 +110,7 @@
   };
 </script>
 
-  <title> Markdown使用 | 一口大黑郭 </title>
+  <title> 爬取雪球所有用户信息 | 一口大黑郭 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -237,7 +240,7 @@
             
             
               
-                Markdown使用
+                爬取雪球所有用户信息
               
             
           </h1>
@@ -249,8 +252,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-05-09T20:42:54+08:00" content="2016-05-09">
-              2016-05-09
+            <time itemprop="dateCreated" datetime="2016-07-10T13:25:12+08:00" content="2016-07-10">
+              2016-07-10
             </time>
           </span>
 
@@ -263,8 +266,8 @@
               <span class="post-meta-item-text">分类于</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/工具使用/" itemprop="url" rel="index">
-                    <span itemprop="name">工具使用</span>
+                  <a href="/categories/python/" itemprop="url" rel="index">
+                    <span itemprop="name">python</span>
                   </a>
                 </span>
 
@@ -279,8 +282,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/05/09/Markdown使用/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/09/Markdown使用/" itemprop="commentsCount"></span>
+                <a href="/2016/07/10/爬取雪球所有用户信息/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/10/爬取雪球所有用户信息/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -303,66 +306,24 @@
       
 
       
-        <h1 id="使用Markdown"><a href="#使用Markdown" class="headerlink" title="使用Markdown"></a>使用Markdown</h1><p>使用Markdown的好处就不多说了，简洁，高效，便捷等。最近准备重新搭建个人博客，年纪大了，记忆力不如从前，好多东西还是要总结记录下来，方便以后翻阅查看。之前的博客是租的服务器，用wordpress搭建的。wp挺好用的，搭建比较简单，主题也多。但随着年龄增大，对一些复杂功能的要求越来越低，反而是简洁的东西更吸引人，且更能专注于写作。加上平时习惯了vim+HHKB的键盘流操作风格和github的使用，自然就选择了markdown+github的方案了。</p>
-<hr>
-<a id="more"></a>
-<h1 id="Markdown语法"><a href="#Markdown语法" class="headerlink" title="Markdown语法"></a>Markdown语法</h1><p>Markdown语法很简单，记住下面这10个基本就够用了。更多语法可以参考<a href="http://www.markdown.cn" target="_blank" rel="external">Markdown.cn</a></p>
-<h2 id="1-标题"><a href="#1-标题" class="headerlink" title="1. 标题"></a>1. 标题</h2><p>在每行的开头加上一定数量的#号代表响应级别的标题（#号数量最多为6个），比如：  </p>
-<pre><code>#一级标题 ;##二级标题 ;###三级标题 ;......######六级标题;  
-</code></pre><p>另一种写法是利用 = （一级标题）和 - （二级标题），例如：  </p>
-<pre><code>这是第一级标题  
-=============  
-这是第二级标题  
-------------
-</code></pre><h2 id="2-引用"><a href="#2-引用" class="headerlink" title="2. 引用"></a>2. 引用</h2><p>在每行的最前面加上&gt;符号，区块引用可以嵌套，如引用的引用，只需根据需求加上不同数量的&gt;符号。  </p>
-<pre><code>&gt;第一级引用
-&gt;&gt;第二级引用
-&gt;&gt;&gt;第三级引用
-</code></pre><h2 id="3-列表"><a href="#3-列表" class="headerlink" title="3. 列表"></a>3. 列表</h2><p>列表分有序列表和无序列表。  </p>
-<p>有序列表使用数字接着一个英文句点：  </p>
-<pre><code>1.  Bird
-2.  McHale
-3.  Parish
-</code></pre><p>无序列表使用星号、加号或是减号作为列表标记：  </p>
-<pre><code>*   Red
-*   Green
-*   Blue
-</code></pre><h2 id="4-代码区块"><a href="#4-代码区块" class="headerlink" title="4. 代码区块"></a>4. 代码区块</h2><p>在 Markdown 中建立代码区块很简单，只要简单地缩进 4 个空格或是 1 个制表符就可以，例如，下面的输入：  </p>
-<pre><code>这是一个普通段落：
-
-    这是一个代码区块。  
-</code></pre><h2 id="5-分割线"><a href="#5-分割线" class="headerlink" title="5. 分割线"></a>5. 分割线</h2><p>你可以在一行中用三个以上的星号、减号、底线来建立一个分隔线，行内不能有其他东西。你也可以在星号或是减号中间插入空格。下面每种写法都可以建立分隔线：  </p>
-<pre><code>* * *
-
-***
-
-*****
-
-- - -
-
----------------------------------------   
-</code></pre><h2 id="6-链接"><a href="#6-链接" class="headerlink" title="6. 链接"></a>6. 链接</h2><p>Markdown 支持两种形式的链接语法： 行内式和参考式两种形式。这里只说下行内式链接。要建立一个行内式的链接，只要在方块括号后面紧接着圆括号并插入网址链接即可，如果你还想要加上链接的 title 文字，只要在网址后面，用双引号把 title 文字包起来即可，例如：  </p>
-<pre><code>This is [an example](http://example.com/ &quot;Title&quot;) inline link.
-
-[This link](http://example.net/) has no title attribute.
-</code></pre><h2 id="7-强调"><a href="#7-强调" class="headerlink" title="7. 强调"></a>7. 强调</h2><p>使用*<em> 和*<em>*</em> 对使用的字词强调，\</em>字词<em> 代表斜体，\</em>*字词** 代表粗体如：  </p>
-<pre><code>*斜体*
-**加粗**
-</code></pre><h2 id="8-行内代码块"><a href="#8-行内代码块" class="headerlink" title="8. 行内代码块"></a>8. 行内代码块</h2><p>使用反引号包含区域代表该区域为代码块，如：  </p>
-<pre><code>这是`代码块`  
-</code></pre><h2 id="9-插入图片"><a href="#9-插入图片" class="headerlink" title="9. 插入图片"></a>9. 插入图片</h2><p>Markdown 使用一种和链接很相似的语法来标记图片，插入方式如下：  </p>
-<pre><code>![Alt text](/path/to/img.jpg)
-
-![Alt text](/path/to/img.jpg &quot;Optional title&quot;)  
-</code></pre><ul>
-<li>一个惊叹号 !  </li>
-<li>接着一个方括号，里面放上图片的替代文字  </li>
-<li>接着一个普通括号，里面放上图片的网址，最后还可以用引号包住并加上 选择性的 ‘title’ 文字。</li>
-</ul>
-<h2 id="10-反斜杠"><a href="#10-反斜杠" class="headerlink" title="10. 反斜杠"></a>10. 反斜杠</h2><p>Markdown 可以利用反斜杠来插入一些在语法中有其它意义的符号，例如：如果你想要用星号加在文字旁边的方式来做出强调效果（但不用 <em\> 标签），你可以在星号的前面加上反斜杠：  </em\></p>
-<pre><code>\*literal asterisks\*
-</code></pre><hr>
-<h1 id="结束"><a href="#结束" class="headerlink" title="结束"></a>结束</h1><p>就这么几个简单的语法，满足了写作时候大部分需求，轻便又简单。抛弃office繁琐的操作，更好的专注于记录与写作吧。</p>
+        <h4 id="需求分析"><a href="#需求分析" class="headerlink" title="需求分析"></a>需求分析</h4><p>最近想要获取一些雪球的数据，所以写了个小爬虫来抓取。写爬虫时也看了些框架，比如scrapy。觉得目前还用不上太多功能，本着快速开发原则，直接使用python requests库抓取。代码一共一百多行，抓取了十万多用户数据，足够使用分析了。<br><a id="more"></a></p>
+<h4 id="技术清单："><a href="#技术清单：" class="headerlink" title="技术清单："></a>技术清单：</h4><ol>
+<li><p><strong>使用python requests和xpath与正则表达式抓取用户信息。</strong>  </p>
+</li>
+<li><p><strong>使用MongoDB储存用户信息，包括城市，性别，ID，关注数，粉丝数，讨论数。</strong>  </p>
+</li>
+<li><p><strong>使用redis做任务队列，和去重功能。</strong>  </p>
+</li>
+<li><p><strong>使用宽度优先算法 。</strong>    </p>
+</li>
+</ol>
+<h4 id="结果统计："><a href="#结果统计：" class="headerlink" title="结果统计："></a>结果统计：</h4><ol>
+<li><strong>雪球粉丝大于20w的用户：</strong><br><img src="https://github.com/guofh/XueqiuSpider/blob/master/followers.png" alt="Alt text"></li>
+</ol>
+<ol>
+<li><strong>雪球讨论数最多的前20个用户：</strong><br><img src="https://github.com/guofh/XueqiuSpider/blob/master/dicuss.png" alt="Alt text"></li>
+</ol>
+<h4 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h4><p>源码放在<a href="https://github.com/guofh/XueqiuSpider.git" target="_blank" rel="external">Github</a> has no title attribute.上，欢迎Star and Fork。</p>
 
       
     </div>
@@ -405,7 +366,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/markdown/" rel="tag">#markdown</a>
+            <a href="/tags/python/" rel="tag">#python</a>
+          
+            <a href="/tags/爬虫/" rel="tag">#爬虫</a>
           
         </div>
       
@@ -414,13 +377,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/07/05/使用PyMongo/" rel="next" title="使用PyMongo">
+                <i class="fa fa-chevron-left"></i> 使用PyMongo
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/10/git使用/" rel="prev" title="git使用">
-                git使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -446,8 +409,8 @@
           
   <div class="comments" id="comments">
     
-      <div class="ds-thread" data-thread-key="2016/05/09/Markdown使用/"
-           data-title="Markdown使用" data-url="http://yoursite.com/2016/05/09/Markdown使用/">
+      <div class="ds-thread" data-thread-key="2016/07/10/爬取雪球所有用户信息/"
+           data-title="爬取雪球所有用户信息" data-url="http://yoursite.com/2016/07/10/爬取雪球所有用户信息/">
       </div>
     
   </div>
@@ -576,7 +539,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#使用Markdown"><span class="nav-number">1.</span> <span class="nav-text">使用Markdown</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Markdown语法"><span class="nav-number">2.</span> <span class="nav-text">Markdown语法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-标题"><span class="nav-number">2.1.</span> <span class="nav-text">1. 标题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-引用"><span class="nav-number">2.2.</span> <span class="nav-text">2. 引用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-列表"><span class="nav-number">2.3.</span> <span class="nav-text">3. 列表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-代码区块"><span class="nav-number">2.4.</span> <span class="nav-text">4. 代码区块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-分割线"><span class="nav-number">2.5.</span> <span class="nav-text">5. 分割线</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-链接"><span class="nav-number">2.6.</span> <span class="nav-text">6. 链接</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-强调"><span class="nav-number">2.7.</span> <span class="nav-text">7. 强调</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-行内代码块"><span class="nav-number">2.8.</span> <span class="nav-text">8. 行内代码块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-插入图片"><span class="nav-number">2.9.</span> <span class="nav-text">9. 插入图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-反斜杠"><span class="nav-number">2.10.</span> <span class="nav-text">10. 反斜杠</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#结束"><span class="nav-number">3.</span> <span class="nav-text">结束</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#需求分析"><span class="nav-number">1.</span> <span class="nav-text">需求分析</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#技术清单："><span class="nav-number">2.</span> <span class="nav-text">技术清单：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结果统计："><span class="nav-number">3.</span> <span class="nav-text">结果统计：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#源码"><span class="nav-number">4.</span> <span class="nav-text">源码</span></a></li></ol></div>
             
           </div>
         </section>
