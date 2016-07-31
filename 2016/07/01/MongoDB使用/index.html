@@ -1,0 +1,869 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="mongodb," />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="MongoDB  使用MAC 上安装MongoDB首先更新Homebrew的package数据库
+brew update
+更新完成之后，直接安装MongoDB
+brew install mongodb
+启动MongoDBmongod --config /usr/local/etc/mongod.conf
+mongod.conf中是关于MongoDB的设置
+systemLog://log 目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MongoDB使用">
+<meta property="og:url" content="http://yoursite.com/2016/07/01/MongoDB使用/index.html">
+<meta property="og:site_name" content="一口大黑郭">
+<meta property="og:description" content="MongoDB  使用MAC 上安装MongoDB首先更新Homebrew的package数据库
+brew update
+更新完成之后，直接安装MongoDB
+brew install mongodb
+启动MongoDBmongod --config /usr/local/etc/mongod.conf
+mongod.conf中是关于MongoDB的设置
+systemLog://log 目录">
+<meta property="og:updated_time" content="2016-07-31T02:33:10.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="MongoDB使用">
+<meta name="twitter:description" content="MongoDB  使用MAC 上安装MongoDB首先更新Homebrew的package数据库
+brew update
+更新完成之后，直接安装MongoDB
+brew install mongodb
+启动MongoDBmongod --config /usr/local/etc/mongod.conf
+mongod.conf中是关于MongoDB的设置
+systemLog://log 目录">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"always"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+  <title> MongoDB使用 | 一口大黑郭 </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">一口大黑郭</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-th fa-fw"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                MongoDB使用
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-07-01T10:12:31+08:00" content="2016-07-01">
+              2016-07-01
+            </time>
+          </span>
+
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/工具使用/" itemprop="url" rel="index">
+                    <span itemprop="name">工具使用</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/07/01/MongoDB使用/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/07/01/MongoDB使用/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="MongoDB-使用"><a href="#MongoDB-使用" class="headerlink" title="MongoDB  使用"></a>MongoDB  使用</h1><h3 id="MAC-上安装MongoDB"><a href="#MAC-上安装MongoDB" class="headerlink" title="MAC 上安装MongoDB"></a>MAC 上安装MongoDB</h3><p>首先更新Homebrew的package数据库</p>
+<pre><code>brew update
+</code></pre><p>更新完成之后，直接安装MongoDB</p>
+<pre><code>brew install mongodb
+</code></pre><h3 id="启动MongoDB"><a href="#启动MongoDB" class="headerlink" title="启动MongoDB"></a>启动MongoDB</h3><pre><code>mongod --config /usr/local/etc/mongod.conf
+</code></pre><p>mongod.conf中是关于MongoDB的设置</p>
+<pre><code>systemLog://log 目录 
+   destination: file
+   path: /usr/local/var/log/mongodb/mongo.log logAppend: true
+ storage://db目录 
+   dbPath: /usr/local/var/mongodb net://网络地址 bindIp: 127.0.0.1
+</code></pre><p>连接到MongoDB</p>
+<pre><code>mongo
+</code></pre><a id="more"></a>
+<h3 id="MongoDB常用命令"><a href="#MongoDB常用命令" class="headerlink" title="MongoDB常用命令"></a>MongoDB常用命令</h3><h4 id="输入help可以看到基本操作命令"><a href="#输入help可以看到基本操作命令" class="headerlink" title="输入help可以看到基本操作命令:"></a>输入help可以看到基本操作命令:</h4><p>显示数据库列表 </p>
+<pre><code>show dbs
+</code></pre><p>显示当前数据库中的集合（类似关系数据库中的表） </p>
+<pre><code>show collections
+</code></pre><p>显示用户</p>
+<pre><code>show users
+</code></pre><p>切换当前数据库，这和MS-SQL里面的意思一样 </p>
+<pre><code>use &lt;db name&gt;
+</code></pre><p>显示数据库操作命令，里面有很多的命令 </p>
+<pre><code>db.help()
+</code></pre><p>显示集合操作命令，同样有很多的命令，foo指的是当前数据库下，一个叫foo的集合，并非真正意义上的命令 </p>
+<pre><code>db.foo.help()
+</code></pre><p>对于当前数据库中的foo集合进行数据查找（由于没有条件，会列出所有数据） </p>
+<pre><code>db.foo.find()
+</code></pre><p>对于当前数据库中的foo集合进行查找，条件是数据中有一个属性叫a，且a的值为1</p>
+<pre><code>db.foo.find( { a : 1 } )
+</code></pre><p>MongoDB没有创建数据库的命令，但有类似的命令。</p>
+<p>如：如果你想创建一个“myTest”的数据库，先运行<code>use myTest</code>命令，之后就做一些操作（如：<code>db.createCollection(&#39;user&#39;)</code>）,这样就可以创建一个名叫“myTest”的数据库。    </p>
+<p>删除当前使用数据库</p>
+<pre><code>db.dropDatabase();
+</code></pre><p>从指定主机上克隆数据库,</p>
+<pre><code>db.cloneDatabase(“127.0.0.1”)
+</code></pre><p>从指定的机器上复制指定数据库数据到某个数据库。将本机的mydb的数据复制到temp数据库中</p>
+<pre><code>db.copyDatabase(&quot;mydb&quot;, &quot;temp&quot;, &quot;127.0.0.1&quot;)
+</code></pre><p>修复当前数据库</p>
+<pre><code>db.repairDatabase()
+</code></pre><p>查看当前使用的数据库</p>
+<pre><code>db.getName()
+</code></pre><p>显示当前db状态</p>
+<pre><code>db.stats()
+</code></pre><p>当前db版本</p>
+<pre><code>db.version()
+</code></pre><p>查看当前db的链接机器地址</p>
+<pre><code>db.getMongo()
+</code></pre><p>创建一个聚集集合（table）</p>
+<pre><code>db.createCollection(“collName”, {size: 20, capped: 5, max: 100})
+</code></pre><p>得到指定名称的聚集集合（table）</p>
+<pre><code>db.getCollection(&quot;account&quot;)
+</code></pre><p>得到当前db的所有聚集集合</p>
+<pre><code>db.getCollectionNames()
+</code></pre><p>显示当前db所有聚集索引的状态</p>
+<pre><code>db.printCollectionStats()
+</code></pre><p>添加一个用户,;添加用户、设置密码、是否只读</p>
+<pre><code>db.addUser(&quot;name&quot;);
+db.addUser(&quot;userName&quot;, &quot;pwd123&quot;, true)
+</code></pre><p>数据库认证、安全模式</p>
+<pre><code>db.auth(&quot;userName&quot;, &quot;123123&quot;)
+</code></pre><p>删除用户</p>
+<pre><code>db.removeUser(&quot;userName&quot;)
+</code></pre><p>查询之前的错误信息</p>
+<pre><code>db.getPrevError()
+</code></pre><p>清除错误记录</p>
+<pre><code>db.resetError()
+</code></pre><h4 id="查看聚集集合基本信息"><a href="#查看聚集集合基本信息" class="headerlink" title="查看聚集集合基本信息"></a>查看聚集集合基本信息</h4><ol>
+<li><p><strong>查看帮助：</strong>  <code>db.yourColl.help()</code>   </p>
+</li>
+<li><p><strong>查询当前集合的数据条数：</strong>  <code>db.yourColl.count()</code>   </p>
+</li>
+<li><p><strong>查看数据空间大小：</strong> <code>db.userInfo.dataSize()</code>   </p>
+</li>
+<li><p><strong>得到当前聚集集合所在的db：</strong> <code>db.userInfo.getDB()</code>   </p>
+</li>
+<li><p><strong>得到当前聚集的状态：</strong> <code>db.userInfo.stats()</code>   </p>
+</li>
+<li><p><strong>得到聚集集合总大小：</strong> <code>db.userInfo.totalSize()</code>   </p>
+</li>
+<li><p><strong>聚集集合储存空间大小：</strong> <code>db.userInfo.storageSize()</code>    </p>
+</li>
+<li><p><strong>Shard版本信息：</strong>  <code>db.userInfo.getShardVersion()</code>    </p>
+</li>
+<li><p><strong>聚集集合重命名,将userInfo重命名为users：</strong> <code>db.userInfo.renameCollection(&quot;users&quot;)</code>      </p>
+</li>
+<li><p><strong>删除当前聚集集合：</strong> <code>db.userInfo.drop()</code></p>
+</li>
+</ol>
+<h4 id="聚集集合查询"><a href="#聚集集合查询" class="headerlink" title="聚集集合查询"></a>聚集集合查询</h4><ol>
+<li><p><strong>查询所有记录</strong>：<code>db.userInfo.find()</code>相当于：select* from userInfo;默认每页显示20条记录，当显示不下的情况下，可以用it迭代命令查询下一页数据。注意：键入it命令不能带“；”但是你可以设置每页显示数据的大小，用<code>DBQuery.shellBatchSize= 50</code>这样每页就显示50条记录了。</p>
+</li>
+<li><p><strong>查询去掉后的当前聚集集合中的某列的重复数据</strong>：<code>db.userInfo.distinct(&quot;name&quot;)</code>。会过滤掉name中的相同数据,相当于：select distict name from userInfo。</p>
+</li>
+<li><p><strong>查询age = 22的记录</strong>：<code>db.userInfo.find({&quot;age&quot;: 22})</code>;相当于： select * from userInfo where age = 22;</p>
+</li>
+<li><p><strong>查询age &gt; 22的记录</strong>：<code>db.userInfo.find({age: {$gt: 22}})</code>;相当于：select * from userInfo where age &gt;22;</p>
+</li>
+<li><p><strong>查询age &lt; 22的记录</strong>：<code>db.userInfo.find({age: {$lt: 22}})</code>;相当于：select * from userInfo where age &lt;22;</p>
+</li>
+<li><p><strong>查询age &gt;= 25的记录</strong>：<code>db.userInfo.find({age: {$gte: 25}})</code>;相当于：select * from userInfo where age &gt;= 25;</p>
+</li>
+<li><p><strong>查询age &lt;= 25的记录</strong>：<code>db.userInfo.find({age: {$lte: 25}})</code>;</p>
+</li>
+<li><p><strong>查询age &gt;= 23 并且 age &lt;= 26</strong>：<code>db.userInfo.find({age: {$gte: 23, $lte: 26}})</code>;</p>
+</li>
+<li><p><strong>查询name中包含 mongo的数据</strong>：<code>db.userInfo.find({name: /mongo/})</code>;相当于select * from userInfo where name like ‘%mongo%’;</p>
+</li>
+<li><p><strong>查询name中以mongo开头的</strong>：<code>db.userInfo.find({name: /^mongo/})</code>;select * from userInfo where name like ‘mongo%’;</p>
+</li>
+<li><p><strong>查询指定列name、age数据</strong>：<code>db.userInfo.find({}, {name: 1, age: 1})</code>;相当于：select name, age from userInfo;当然name也可以用true或false,当用ture的情况下河name:1效果一样，如果用false就是排除name，显示name以外的列信息。</p>
+</li>
+<li><p><strong>查询指定列name、age数据, age &gt; 25</strong>：<code>db.userInfo.find({age: {$gt: 25}}, {name: 1, age: 1})</code>;相当于：select name, age from userInfo where age &gt;25;</p>
+</li>
+<li><p><strong>按照年龄排序，升序</strong>：<code>db.userInfo.find().sort({age: 1})</code>;<strong>降序</strong>：<code>db.userInfo.find().sort({age: -1})</code>;</p>
+</li>
+<li><p><strong>查询name = zhangsan, age = 22的数据</strong>：<code>db.userInfo.find({name: &#39;zhangsan&#39;, age: 22})</code>;相当于：select * from userInfo where name = ‘zhangsan’ and age = ‘22’;</p>
+</li>
+<li><p><strong>查询前5条数据</strong>：<code>db.userInfo.find().limit(5)</code>;相当于：selecttop 5 * from userInfo;</p>
+</li>
+<li><p><strong>查询10条以后的数据</strong>：<code>db.userInfo.find().skip(10)</code>;相当于：select <em> from userInfo where id not in (selecttop 10 </em> from userInfo);</p>
+</li>
+<li><p><strong>查询在5-10之间的数据</strong>：<code>db.userInfo.find().limit(10).skip(5)</code>;可用于分页，limit是pageSize，skip是第几页*pageSize</p>
+</li>
+<li><p><strong>or与 查询</strong>：<code>db.userInfo.find({$or: [{age: 22}, {age: 25}]})</code>;相当于：select * from userInfo where age = 22 or age = 25;</p>
+</li>
+<li><p><strong>查询第一条数据</strong>：<code>db.userInfo.findOne()</code>;相当于：selecttop 1 * from userInfo;db.userInfo.find().limit(1);</p>
+</li>
+<li><p><strong>查询某个结果集的记录条数</strong>：<code>db.userInfo.find({age: {$gte: 25}}).count()</code>;相当于：select count(*) from userInfo where age &gt;= 20;</p>
+</li>
+<li><p><strong>按照某列进行排序</strong>：<code>db.userInfo.find({sex: {$exists: true}}).count()</code>;相当于：select count(sex) from userInfo;  </p>
+</li>
+</ol>
+<h4 id="索引"><a href="#索引" class="headerlink" title="索引"></a>索引</h4><p>创建索引</p>
+<pre><code>db.userInfo.ensureIndex({name: 1})
+db.userInfo.ensureIndex({name: 1, ts: -1})
+</code></pre><p>查询当前聚集集合所有索引</p>
+<pre><code>db.userInfo.getIndexes()
+</code></pre><p>查看总索引记录大小</p>
+<pre><code>db.userInfo.totalIndexSize()
+</code></pre><p>读取当前集合的所有index信息</p>
+<pre><code>db.users.reIndex()
+</code></pre><p>删除指定索引</p>
+<pre><code>db.users.dropIndex(&quot;name_1&quot;)
+</code></pre><p>删除所有索引索引</p>
+<pre><code>db.users.dropIndexes()
+</code></pre><h4 id="修改、添加、删除集合数据"><a href="#修改、添加、删除集合数据" class="headerlink" title="修改、添加、删除集合数据"></a>修改、添加、删除集合数据</h4><ol>
+<li><p><strong>添加</strong>：<code>db.users.save({name: ‘zhangsan’, age: 25, sex: true})</code>;添加的数据的数据列，没有固定，根据添加的数据为准</p>
+</li>
+<li><p><strong>修改</strong>：<code>db.users.update({age: 25}, {$set: {name: &#39;changeName&#39;}}, false, true)</code>;相当于：update users set name = ‘changeName’ where age = 25;<code>db.users.update({name: &#39;Lisi&#39;}, {$inc: {age: 50}}, false, true)</code>;<br>相当于：update users set age = age + 50 where name = ‘Lisi’;<code>db.users.update({name: &#39;Lisi&#39;}, {$inc: {age: 50}, $set: {name: &#39;hoho&#39;}}, false, true)</code>;相当于：update users set age = age + 50, name = ‘hoho’ where name = ‘Lisi’;</p>
+</li>
+<li><p><strong>删除</strong>：<code>db.users.remove({age: 132})</code>;</p>
+</li>
+<li><p><strong>查询修改删除</strong>：<code>db.users.findAndModify({query: {age: {$gte: 25}}, sort: {age: -1}, update: {$set: {name: &#39;a2&#39;}, $inc: {age: 2}},remove: true})</code>;<code>db.runCommand({ findandmodify : &quot;users&quot;, query: {age: {$gte:25}}, sort: {age: -1}, update: {$set: {name: &#39;a2&#39;}, $inc: {age: 2}},remove:true})</code>;update 或 remove 其中一个是必须的参数; 其他参数可选。</p>
+</li>
+</ol>
+<h4 id="语句块操作"><a href="#语句块操作" class="headerlink" title="语句块操作"></a>语句块操作</h4><ol>
+<li><p><strong>简单Hello World</strong>：<code>print(&quot;Hello World!&quot;)</code>;这种写法调用了print函数，和直接写入”Hello World!”的效果是一样的；</p>
+</li>
+<li><p><strong>将一个对象转换成json</strong>：<code>tojson(new Object())</code>;<code>tojson(newObject(&#39;a&#39;))</code>;</p>
+</li>
+<li><p><strong>循环添加数据</strong>：<code>for (var i = 0; i &lt; 30; i++) {... db.users.save({name: &quot;u_&quot; + i, age: 22 + i, sex: i % 2});... }</code>;这样就循环添加了30条数据，同样也可以省略括号的写法。<code>for (var i = 0; i &lt; 30; i++) db.users.save({name: &quot;u_&quot; + i, age: 22 + i, sex: i % 2})</code>;也是可以的，当你用db.users.find()查询的时候，显示多条数据而无法一页显示的情况下，可以用it查看下一页的信息；</p>
+</li>
+<li><p><strong>find 游标查询</strong>：<code>var cursor = db.users.find();while (cursor.hasNext()) { 
+ printjson(cursor.next()); }</code>这样就查询所有的users信息，同样可以这样写<code>var cursor = db.users.find();while (cursor.hasNext()){ printjson(cursor.next); }</code>同样可以省略{}号</p>
+</li>
+<li><p><strong>forEach迭代循环</strong>：<code>db.users.find().forEach(printjson)</code>;forEach中必须传递一个函数来处理每条迭代的数据信息</p>
+</li>
+<li><p><strong>将find游标当数组处理</strong>：<code>var cursor = db.users.find();cursor[4]</code>;取得下标索引为4的那条数据既然可以当做数组处理，那么就可以获得它的长度：cursor.length();或者cursor.count();那样我们也可以用循环显示数据，<code>for (var i = 0, len = c.length(); i &lt; len; i++) printjson(c[i])</code>;</p>
+</li>
+<li><p><strong>将find游标转换成数组</strong>：<code>var arr = db.users.find().toArray();printjson(arr[2])</code>;用toArray方法将其转换为数组</p>
+</li>
+<li><p><strong>定制我们自己的查询结果</strong>：只显示age &lt;= 28的并且只显示age这列数据<code>db.users.find({age: {$lte: 28}}, {age: 1}).forEach(printjson)</code>;<code>db.users.find({age: {$lte: 28}}, {age: true}).forEach(printjson)</code>;排除age的列<br><code>db.users.find({age: {$lte: 28}}, {age: false}).forEach(printjson)</code>;</p>
+</li>
+<li><p><strong>forEach传递函数显示信息</strong>：<code>db.things.find({x:4}).forEach(function(x) {print(tojson(x));})</code>;</p>
+</li>
+</ol>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+  <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+    <div>请他喝杯咖啡</div>
+    <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+      <span>赏</span>
+    </button>
+    <div id="QR" style="display: none;">
+      
+        <div id="wechat" style="display: inline-block">
+          <img id="wechat_qr" src="/uploads/weixin.jpg" alt="郭峰浩 WeChat Pay"/>
+          <p>微信打赏</p>
+        </div>
+      
+      
+        <div id="alipay" style="display: inline-block">
+          <img id="alipay_qr" src="/uploads/zhifubao.jpg" alt="郭峰浩 Alipay"/>
+          <p>支付宝打赏</p>
+        </div>
+      
+    </div>
+  </div>
+
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/mongodb/" rel="tag">#mongodb</a>
+          
+        </div>
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/26/b+树/" rel="next" title="b+树">
+                <i class="fa fa-chevron-left"></i> b+树
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+      <div class="ds-thread" data-thread-key="2016/07/01/MongoDB使用/"
+           data-title="MongoDB使用" data-url="http://yoursite.com/2016/07/01/MongoDB使用/">
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/uploads/touxiang1.jpg"
+               alt="郭峰浩" />
+          <p class="site-author-name" itemprop="name">郭峰浩</p>
+          <p class="site-description motion-element" itemprop="description">E-mail：heiguo88@gmail.com</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">5</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+            <div class="site-state-item site-state-categories">
+              <a href="/categories">
+                <span class="site-state-item-count">3</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+            
+              <span class="links-of-author-item">
+                <a href="https://github.com/guofh" target="_blank" title="Github">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  Github
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="https://twitter.com/guofenghao" target="_blank" title="Twitter">
+                  
+                    <i class="fa fa-twitter"></i>
+                  
+                  Twitter
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://weibo.com/u/1608030375" target="_blank" title="微博">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  微博
+                </a>
+              </span>
+            
+              <span class="links-of-author-item">
+                <a href="http://douban.com/people/daheigong/" target="_blank" title="豆瓣">
+                  
+                    <i class="fa fa-globe"></i>
+                  
+                  豆瓣
+                </a>
+              </span>
+            
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#MongoDB-使用"><span class="nav-number">1.</span> <span class="nav-text">MongoDB  使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#MAC-上安装MongoDB"><span class="nav-number">1.0.1.</span> <span class="nav-text">MAC 上安装MongoDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#启动MongoDB"><span class="nav-number">1.0.2.</span> <span class="nav-text">启动MongoDB</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MongoDB常用命令"><span class="nav-number">1.0.3.</span> <span class="nav-text">MongoDB常用命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#输入help可以看到基本操作命令"><span class="nav-number">1.0.3.1.</span> <span class="nav-text">输入help可以看到基本操作命令:</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看聚集集合基本信息"><span class="nav-number">1.0.3.2.</span> <span class="nav-text">查看聚集集合基本信息</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#聚集集合查询"><span class="nav-number">1.0.3.3.</span> <span class="nav-text">聚集集合查询</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#索引"><span class="nav-number">1.0.3.4.</span> <span class="nav-text">索引</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#修改、添加、删除集合数据"><span class="nav-number">1.0.3.5.</span> <span class="nav-text">修改、添加、删除集合数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#语句块操作"><span class="nav-number">1.0.3.6.</span> <span class="nav-text">语句块操作</span></a></li></ol></li></ol></li></ol></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">郭峰浩</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="http://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.1"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+  
+    
+  
+
+  <script type="text/javascript">
+    var duoshuoQuery = {short_name:"guofh"};
+    (function() {
+      var ds = document.createElement('script');
+      ds.type = 'text/javascript';ds.async = true;
+      ds.id = 'duoshuo-script';
+      ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+      ds.charset = 'UTF-8';
+      (document.getElementsByTagName('head')[0]
+      || document.getElementsByTagName('body')[0]).appendChild(ds);
+    })();
+  </script>
+
+  
+    
+  
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
+</body>
+</html>
